@@ -4,7 +4,7 @@ setwd("/Users/fernando/Desktop/AdTracking_Fraude_Detection_com_R")
 
 library(data.table)
 # lendo o arquivo de treino
-df <- fread("train_sample.csv")
+df <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/train_sample.csv")
 # Visualização do Data Frame
 View(df)
 # Resumo do Data Frame
@@ -420,7 +420,7 @@ transform_test <- function(test){
 }
 
 # Lendo o arquivo test_p1 e fazendo a previsão com o agloritmo glm
-test_kaggle_p1 <- fread("test_p1.csv")
+test_kaggle_p1 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p1.csv")
 # transformando o arquivo para a predição
 test_kaggle_p1 <- transform_test(test_kaggle_p1)
 # realizando a predição
@@ -436,7 +436,7 @@ head(prediction1_p1)
 rm(test_kaggle_p1)
 
 # Lendo o arquivo test_p2 e fazendo a previsão com o agloritmo glm
-test_kaggle_p2 <- fread("test_p2.csv")
+test_kaggle_p2 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p2.csv")
 # transformando o arquivo para a predição
 test_kaggle_p2 <- transform_test(test_kaggle_p2)
 # realizando a predição
@@ -454,7 +454,7 @@ head(prediction1_p2)
 rm(test_kaggle_p2)
 
 # Lendo o arquivo test_p3 e fazendo a previsão com o agloritmo glm
-test_kaggle_p3 <- fread("test_p3.csv")
+test_kaggle_p3 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p3.csv")
 # transformando o arquivo para a predição
 test_kaggle_p3 <- transform_test(test_kaggle_p3)
 # realizando a predição
@@ -472,7 +472,7 @@ head(prediction1_p3)
 rm(test_kaggle_p3)
 
 # Lendo o arquivo test_p4 e fazendo a previsão com o agloritmo glm
-test_kaggle_p4 <- fread("test_p4.csv")
+test_kaggle_p4 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p4.csv")
 # transformando o arquivo para a predição
 test_kaggle_p4 <- transform_test(test_kaggle_p4)
 # realizando a predição
@@ -612,11 +612,11 @@ roc.curve(rose_test$is_attributed, pred_nb_v1, plotit = T,
 # simular esse modelo nos dados de teste do kaggle.
 
 # Lendo o arquivo test_p1 e fazendo a previsão com o agloritmo random forest
-test_kaggle_p1 <- fread("test_p1.csv")
+test_kaggle_p1 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p1.csv")
 # transformando o arquivo para a predição
 test_kaggle_p1 <- transform_test(test_kaggle_p1)
 # realizando a predição
-pred_rf_v2_p1 <- predict(modelo_rf_v3, test_kaggle_p1, type="response")
+pred_rf_v2_p1 <- predict(modelo_rf_v2, test_kaggle_p1, type="response")
 # criando um data frame com resposta e predição
 prediction2_p1 <- data.frame('click_id' = test_kaggle_p1$click_id,
                              'is_attributed' = pred_rf_v2_p1)
@@ -626,11 +626,11 @@ head(prediction2_p1)
 rm(test_kaggle_p1)
 
 # Lendo o arquivo test_p2 e fazendo a previsão com o agloritmo random forest
-test_kaggle_p2 <- fread("test_p2.csv")
+test_kaggle_p2 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p2.csv")
 # transformando o arquivo para a predição
 test_kaggle_p2 <- transform_test(test_kaggle_p2)
 # realizando a predição
-pred_rf_v2_p2 <- predict(modelo_rf_v3, test_kaggle_p2, type="response")
+pred_rf_v2_p2 <- predict(modelo_rf_v2, test_kaggle_p2, type="response")
 # criando um data frame com resposta e predição
 prediction2_p2 <- data.frame('click_id' = test_kaggle_p2$click_id,
                              'is_attributed' = pred_rf_v2_p2)
@@ -640,11 +640,11 @@ head(prediction2_p2)
 rm(test_kaggle_p2)
 
 # Lendo o arquivo test_p3 e fazendo a previsão com o agloritmo random forest
-test_kaggle_p3 <- fread("test_p3.csv")
+test_kaggle_p3 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p3.csv")
 # transformando o arquivo para a predição
 test_kaggle_p3 <- transform_test(test_kaggle_p3)
 # realizando a predição
-pred_rf_v2_p3 <- predict(modelo_rf_v3, test_kaggle_p3, type="response")
+pred_rf_v2_p3 <- predict(modelo_rf_v2, test_kaggle_p3, type="response")
 # criando um data frame com resposta e predição
 prediction2_p3 <- data.frame('click_id' = test_kaggle_p3$click_id,
                              'is_attributed' = pred_rf_v2_p3)
@@ -654,11 +654,11 @@ head(prediction2_p3)
 rm(test_kaggle_p3)
 
 # Lendo o arquivo test_p4 e fazendo a previsão com o agloritmo random forest
-test_kaggle_p4 <- fread("test_p4.csv")
+test_kaggle_p4 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p4.csv")
 # transformando o arquivo para a predição
 test_kaggle_p4 <- transform_test(test_kaggle_p4)
 # realizando a predição
-pred_rf_v2_p4 <- predict(modelo_rf_v3, test_kaggle_p4, type="response")
+pred_rf_v2_p4 <- predict(modelo_rf_v2, test_kaggle_p4, type="response")
 # criando um data frame com resposta e predição
 prediction2_p4 <- data.frame('click_id' = test_kaggle_p4$click_id,
                              'is_attributed' = pred_rf_v2_p4)
@@ -738,10 +738,6 @@ confusionMatrix(table(data = pred_glm_v3, reference = rose_test$is_attributed),
 # Curva roc para o model_glm_v3
 roc.curve(rose_test$is_attributed, pred_glm_v3, plotit = T, 
           col = "darkred")
-
-# A curva AUC teve uma boa melhora em relação ao algoritmo anterior, mas mesmo
-# assim, continua fraca. Vamos tentar com outros algoritmos e depois fazer mais 
-# alterações no data set original, caso seja necessário.
 
 # Criando o modelo com o algoritmo Árvore de Decissão
 modelo_tree_v3 = C5.0(is_attributed ~ ., data = rose_train) 
@@ -928,7 +924,7 @@ getmode(dfchannel$count)
 #Como podemos comprovar o valor 1 é o valor mais frequente nas variáveis counts
 
 # Lendo o arquivo parte 1
-test_kaggle_p1 <- fread("test_p1.csv")
+test_kaggle_p1 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p1.csv")
 test_kaggle_p1 <- transform_test(test_kaggle_p1)
 # Criando a coluna count_app
 test_kaggle_p1$count_app <- dfapp$count[match(test_kaggle_p1$app, dfapp$app)]
@@ -961,7 +957,7 @@ rm(test_kaggle_p1)
 
 
 # Lendo o arquivo parte 2
-test_kaggle_p2 <- fread("test_p2.csv")
+test_kaggle_p2 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p2.csv")
 test_kaggle_p2 <- transform_test(test_kaggle_p2)
 # Criando a coluna count_app
 test_kaggle_p2$count_app <- dfapp$count[match(test_kaggle_p2$app, dfapp$app)]
@@ -993,7 +989,7 @@ rm(test_kaggle_p2)
 
 
 # Lendo o arquivo parte 3
-test_kaggle_p3 <- fread("test_p3.csv")
+test_kaggle_p3 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p3.csv")
 test_kaggle_p3 <- transform_test(test_kaggle_p3)
 # Criando a coluna count_app
 test_kaggle_p3$count_app <- dfapp$count[match(test_kaggle_p3$app, dfapp$app)]
@@ -1025,7 +1021,7 @@ rm(test_kaggle_p3)
 
 
 # Lendo o arquivo parte 4
-test_kaggle_p4 <- fread("test_p4.csv")
+test_kaggle_p4 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p4.csv")
 test_kaggle_p4 <- transform_test(test_kaggle_p4)
 # Criando a coluna count_app
 test_kaggle_p4$count_app <- dfapp$count[match(test_kaggle_p4$app, dfapp$app)]
@@ -1106,7 +1102,7 @@ roc.curve(rose_test$is_attributed, pred_rf_v7, plotit = T,
           col = "darkblue", add.roc = T)
 
 # Lendo o arquivo parte 1
-test_kaggle_p1 <- fread("test_p1.csv")
+test_kaggle_p1 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p1.csv")
 test_kaggle_p1 <- transform_test(test_kaggle_p1)
 # Criando a coluna count_app
 test_kaggle_p1$count_app <- dfapp$count[match(test_kaggle_p1$app, dfapp$app)]
@@ -1139,7 +1135,7 @@ rm(test_kaggle_p1)
 
 
 # Lendo o arquivo parte 2
-test_kaggle_p2 <- fread("test_p2.csv")
+test_kaggle_p2 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p2.csv")
 test_kaggle_p2 <- transform_test(test_kaggle_p2)
 # Criando a coluna count_app
 test_kaggle_p2$count_app <- dfapp$count[match(test_kaggle_p2$app, dfapp$app)]
@@ -1171,7 +1167,7 @@ rm(test_kaggle_p2)
 
 
 # Lendo o arquivo parte 3
-test_kaggle_p3 <- fread("test_p3.csv")
+test_kaggle_p3 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p3.csv")
 test_kaggle_p3 <- transform_test(test_kaggle_p3)
 # Criando a coluna count_app
 test_kaggle_p3$count_app <- dfapp$count[match(test_kaggle_p3$app, dfapp$app)]
@@ -1203,7 +1199,7 @@ rm(test_kaggle_p3)
 
 
 # Lendo o arquivo parte 4
-test_kaggle_p4 <- fread("test_p4.csv")
+test_kaggle_p4 <- fread("https://media.githubusercontent.com/media/fthara/AdTracking_Fraude_Detection_com_R/master/test_p4.csv")
 test_kaggle_p4 <- transform_test(test_kaggle_p4)
 # Criando a coluna count_app
 test_kaggle_p4$count_app <- dfapp$count[match(test_kaggle_p4$app, dfapp$app)]
